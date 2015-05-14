@@ -27,16 +27,43 @@ namespace GitHistory.App
             }
 
             var templateContent = File.ReadAllText(parameters.RazorTemplateFile);
-            var template = Template.Compile(templateContent);
-            var renderedContent = template.Render(new { PageTitle = parameters.PageTitle, StartRevision = parameters.StartRevision, EndRevision = parameters.EndRevision, Commits = commits });
-
-            string outputFolder = Path.GetDirectoryName(parameters.OutputFile);
-
-            if (!string.IsNullOrWhiteSpace(outputFolder) && !Directory.Exists(outputFolder))
+            ITemplate<dynamic> template = null;
+            try
             {
-                Directory.CreateDirectory(outputFolder);
+                template = Template.Compile(templateContent);
             }
-            File.WriteAllText(parameters.OutputFile, renderedContent);
+            catch (Exception ex)
+            {
+                Console.WriteLine(string.Format("Error compiling template located on {0}. Error message: {1}", parameters.RazorTemplateFile, ex.Message));
+                Environment.Exit(2);
+            }
+
+            string renderedContent = null;
+            try
+            {
+                renderedContent = template.Render(new { PageTitle = parameters.PageTitle, StartRevision = parameters.StartRevision, EndRevision = parameters.EndRevision, Commits = commits });
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(string.Format("Error rendering template. Error message: {0}", ex.Message));
+                Environment.Exit(3);
+            }
+
+            try
+            {
+                string outputFolder = Path.GetDirectoryName(parameters.OutputFile);
+
+                if (!string.IsNullOrWhiteSpace(outputFolder) && !Directory.Exists(outputFolder))
+                {
+                    Directory.CreateDirectory(outputFolder);
+                }
+                File.WriteAllText(parameters.OutputFile, renderedContent);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(string.Format("Error saving output file {0}. Error message: {1}", parameters.OutputFile, ex.Message));
+                Environment.Exit(4);
+            }
         }
     }
 }

@@ -1,1 +1,1 @@
-GitHistory.App.exe C:\Work\Git\GitHistory -templateFile "example.razor" "result.md"
+GitHistory.App.exe C:\Work\Git\GitHistory -templateFile "example.razor" "result.md" -pageTitle "Git commit history"
