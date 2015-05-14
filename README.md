@@ -5,7 +5,7 @@ The tool get all the changes between revisions or to a revision of a local git r
 
 # Usage
 
-Usage: GitHistory.App.exe [-gitRepo] <String> [-templateFile] <String> [-outputFile] <String> [-endRevision <String>] [-gitInstallationFolder <String>] [-includeMerges] [-pageTitle <String>] [-pathInRepo <String>] [-startRevision <String>]
+Usage: _GitHistory.App.exe [-gitRepo] <String> [-templateFile] <String> [-outputFile] <String> [-endRevision <String>] [-gitInstallationFolder <String>] [-includeMerges] [-pageTitle <String>] [-pathInRepo <String>] [-startRevision <String>]_
 
 To use the tool you can pass the following arguments:
 
