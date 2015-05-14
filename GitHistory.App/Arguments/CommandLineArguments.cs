@@ -26,7 +26,7 @@ namespace GitHistory.App.Arguments
         [CommandLineArgument("includeMerges"), Alias("im")]
         public bool IncludeMerges { get; set; }
 
-        [CommandLineArgument("gitInstallationFolder"), Alias("gi")]
+        [CommandLineArgument("gitInstallationFolder", DefaultValue=@"C:\Program Files (x86)\Git\bin"), Alias("gi")]
         public string GitInstallationFolder { get; set; }
 
         [CommandLineArgument("pathInRepo"), Alias("p")]
@@ -54,6 +54,10 @@ namespace GitHistory.App.Arguments
             if (!File.Exists(this.RazorTemplateFile))
             {
                 errors.AppendLine(string.Format("The given RazorTemplateFile - {0} does not exist!", this.GitRepo));
+            }
+            if (!string.IsNullOrWhiteSpace(this.GitInstallationFolder) && !File.Exists(Path.Combine(this.GitInstallationFolder, "git.exe")))
+            {
+                errors.AppendLine(string.Format("git.exe was not found in the given folder - {0}!", this.GitInstallationFolder));
             }
 
             var errorsList = errors.ToString();
