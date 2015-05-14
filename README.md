@@ -1,4 +1,4 @@
-# GitHistory
+# Git History Tool
 Small tool getting history for a path in a given local git repository and exporting it using [RazorTemplates](https://github.com/volkovku/RazorTemplates)
 
 The tool get all the changes between revisions or to a revision of a local git repository and pass the commits to a Razor template which then outputs the result in a given file. The commits can be filtered by a given pat in the repository.
