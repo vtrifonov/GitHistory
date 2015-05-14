@@ -1,0 +1,6 @@
+﻿@{
+foreach (var commit in Model.Commits)
+{
+<text>* </text>@commit.CommitMessage<text> (</text>@commit.Author.Name<text>)</text>
+}
+}

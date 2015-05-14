@@ -1,0 +1,1 @@
+GitHistory.App.exe C:\Work\Git\GitHistory -templateFile "example.razor" "result.md"
