@@ -24,7 +24,7 @@ namespace GitHistory.Parsing
             string path = string.Empty;
             if (!string.IsNullOrWhiteSpace(parseInfo.PathInRepo))
             {
-                path = " -- " + parseInfo.PathInRepo;
+                path = " -- " + parseInfo.PathInRepo.Replace("\\", "/");
             }
 
             string arguments = string.Format(" --git-dir={0}/.git --work-tree={0} log --name-status{1}{2}", parseInfo.GitRepo.Replace("\\", "/"), revision, path);
