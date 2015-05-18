@@ -9,23 +9,6 @@ namespace GitHistory.Parsing
 {
     public class HistoryParser
     {
-        //public static Regex RegexParse = new Regex(
-        //"commit\\s+(?<Sha>[a-z0-9A-Z]*)\\s*(?:Merge:\\s+(?<Merge>[a-z" +
-        //"A-Z0-9]*\\s+[a-zA-Z0-9]*)\\s*)?Author:\\s+(?<AutorName>[^<]*" +
-        //")\\s+<(?<AutorEmail>[^>]*)>\\s*Date:\\s*(?<Date>[^\\n]*)\\s*" +
-        //"(?<CommitMessage>[^\\n]*)\\s*(?:Conflicts:\\s*(?<Conflicts>[" +
-        //"^\\n]*)\\n)?\\s*(?:(?<FilesInfo>[MDA]\\s*[^\\n]*)\\n)?",
-        //RegexOptions.CultureInvariant | RegexOptions.Compiled);
-
-        //public static Regex RegexParse = new Regex(
-        //    "commit\\s+(?<Sha>[a-z0-9A-Z]*)\\s*(?:Merge:\\s+(?<Merge>[a-z" +
-        //    "A-Z0-9]*\\s+[a-zA-Z0-9]*)\\s*)?Author:\\s+(?<AutorName>[^<]*" +
-        //    ")\\s+<(?<AutorEmail>[^>]*)>\\s*Date:\\s*(?<Date>[^\\n]*)\\s*" +
-        //    "(?<CommitMessage>[^\\n]*)\\s*(?:Conflicts:\\s*(?<Conflicts>[" +
-        //    "^\\n]*\\.[\\w]*\\s*)+)?\\s*(?:(?<FilesInfo>[MDA]\\s*[^\\n]*)" +
-        //    "\\n)?",
-        //    RegexOptions.CultureInvariant | RegexOptions.Compiled);
-
         public static Regex RegexParse = new Regex(
             "commit\\s+(?<Sha>[a-z0-9A-Z]*)\\s*(?:Merge:\\s+(?<Merge>[a-z" +
             "A-Z0-9]*\\s+[a-zA-Z0-9]*)\\s*)?Author:\\s+(?<AuthorName>[^<]*" +
