@@ -18,10 +18,15 @@ namespace GitHistory.Parsing
         public List<FileStatus> Files { get; set; }
         public List<string> ConflictFiles { get; set; }
 
+        private Author author;
         public Author Author
         {
             get
             {
+                if (author != null)
+                {
+                    return author;
+                }
                 if (this.Headers.ContainsKey("Author"))
                 {
                     return new Author(this.Headers["Author"]);
@@ -30,6 +35,10 @@ namespace GitHistory.Parsing
                 {
                     return null;
                 }
+            }
+            set
+            {
+                author = value;
             }
         }
     }

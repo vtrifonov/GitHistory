@@ -20,6 +20,11 @@ namespace GitHistory.Parsing
             }
         }
 
+        public Author()
+        {
+
+        }
+
         public string Name { get; set; }
         public string Email { get; set; }
     }
