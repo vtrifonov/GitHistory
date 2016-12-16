@@ -19,4 +19,4 @@ To use the tool you can pass the following arguments:
 * **pathInRepo**(or just **p**) - The relative path inside the local repository where you want to get the changes for
 * **pageTitle**(or just **pt**) - This can be used for presentation purposes only. Can be passed to the command line and then output in the result
 
-You can find example usage(**example.bat**) and razor(**example.razor**) files inside the project folder
+You can find example usage [**example.bat**](GitHistory.App/example.bat) and razor [**example.razor**](GitHistory.App/example.razor) files inside the project folder
